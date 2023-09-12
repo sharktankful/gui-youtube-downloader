@@ -9,6 +9,7 @@ This project is a YouTube downloader. This version is coded with Python and the 
 If you want to contribute to this project, you are welcome! For this, there are a few steps:
 
 1. Create a fork of this project in your GitHub account.
+
 2. Clone this fork on your machine with:
 
     ```sh
