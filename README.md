@@ -4,6 +4,38 @@
 
 This project is a YouTube downloader. This version is coded with Python and the pytube library.
 
+## Run the project
+
+Follow these steps to run the YouTube Downloader:
+
+1. Go to the [repository homepage](https://github.com/timotheeMM/youtube-downloader).
+
+2. Click on the green "<> Code" button, go to the "Local" tab and download the ZIP.
+
+3. Unpack the zip file.
+
+4. Install Python if not done by going to the [official website](https://www.python.org/downloads/) and following the instructions for your operating system.
+
+5. Install pytube with pip which normally installed with python.
+
+```sh
+python3 -m pip install pytube
+```
+
+6. Open a terminal or a command prompt and navigate with the cd command to the "scr" folder. For example:
+
+```sh
+cd Downloads/youtube-downloader-main/src/
+```
+
+7. Run the main.py file by doing:
+
+```sh
+python3 main.py
+```
+
+8. Enter the URL of the youtube video you want to download. A "downloads" folder will be created in "src". Your video will be in it.
+
 ## You want to contribute ?
 
 If you want to contribute to this project, you are welcome! For this, there are a few steps:
