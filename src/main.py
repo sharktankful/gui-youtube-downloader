@@ -1,7 +1,7 @@
 from pytube import YouTube
 
 def download_video():
-    url = input("Please enter the URL of the YouTube video you want to download: ")
+    url = input("Enter the URL of the YouTube video: ")
     yt = YouTube(url)
     stream = yt.streams.get_highest_resolution()
     output_path = "downloads"
