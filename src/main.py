@@ -1,11 +1,10 @@
 from pytube import YouTube
 
-def download_video():
-    url = input("Enter the URL of the YouTube video: ")
+def download_video(url):
     yt = YouTube(url)
     stream = yt.streams.get_highest_resolution()
-    output_path = "downloads"
-    stream.download(output_path)
+    stream.download("downloads")
 
 if __name__ == "__main__":
-    download_video()
+    video_url = input("Enter the URL of the YouTube video: ")
+    download_video(video_url)
