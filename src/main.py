@@ -47,6 +47,9 @@ def download_video(url):
     # Close the progress bar
     pbar.close()
 
+    # Print a message to say that the download has been successfully completed
+    print("Download successfully completed!")
+
 if __name__ == "__main__":
     # Prompt the user to enter the URL of the YouTube video
     video_url = input("Enter the URL of the YouTube video: ")
