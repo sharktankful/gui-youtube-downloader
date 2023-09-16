@@ -23,6 +23,18 @@ def download_video(url):
 
     # Define a callback function to update the progress bar
     def on_progress(stream, chunk, bytes_remaining):
+        """
+        Callback function to update the progress bar.
+
+        Args:
+            stream (pytube.Stream): The stream being downloaded.
+            chunk (bytes): The chunk of data being downloaded.
+            bytes_remaining (int): The number of bytes remaining to download.
+
+        Returns:
+            None
+        """
+
         pbar.update(len(chunk))
 
     # Add the on_progress function to the yt instance
