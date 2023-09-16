@@ -1,5 +1,5 @@
-from tqdm import tqdm
 from pytube import YouTube
+from tqdm import tqdm
 
 def download_video(url):
     """
@@ -19,7 +19,7 @@ def download_video(url):
     stream = yt.streams.get_highest_resolution()
 
     # Create a tqdm progress bar
-    pbar = tqdm(total=stream.filesize, unit="B", unit_scale=True)
+    pbar = tqdm(total=stream.filesize, unit="B", unit_scale=True, colour="red")
 
     # Define a callback function to update the progress bar
     def on_progress(stream, chunk, bytes_remaining):
