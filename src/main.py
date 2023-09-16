@@ -12,7 +12,10 @@ def download_video(url):
         None
     """
 
+    # Create a YouTube object for the given URL
     yt = YouTube(url)
+
+    # Get the highest resolution stream
     stream = yt.streams.get_highest_resolution()
 
     # Create a tqdm progress bar
@@ -32,5 +35,8 @@ def download_video(url):
     pbar.close()
 
 if __name__ == "__main__":
+    # Prompt the user to enter the URL of the YouTube video
     video_url = input("Enter the URL of the YouTube video: ")
+
+    # Call the download_video function with the provided URL
     download_video(video_url)
