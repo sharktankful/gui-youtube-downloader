@@ -19,7 +19,7 @@ def download_video(url):
     stream = yt.streams.get_highest_resolution()
 
     # Create a tqdm progress bar
-    pbar = tqdm(total=stream.filesize)
+    pbar = tqdm(total=stream.filesize, unit="B", unit_scale=True)
 
     # Define a callback function to update the progress bar
     def on_progress(stream, chunk, bytes_remaining):
@@ -34,7 +34,8 @@ def download_video(url):
         Returns:
             None
         """
-
+        
+        # Update the tqdm progress bar
         pbar.update(len(chunk))
 
     # Add the on_progress function to the yt instance
