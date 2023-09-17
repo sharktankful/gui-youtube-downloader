@@ -19,7 +19,7 @@ Follow these steps to run the YouTube Downloader:
 5. Install pytube and tqdm with pip which normally installed with python.
 
 ```sh
-python3 -m pip install pytube tqdm
+python3 -m pip install git+https://github.com/pytube/pytube git+https://github.com/tqdm/tqdm
 ```
 
 6. Open a terminal or a command prompt and navigate with the cd command to the "scr" folder. For example:
