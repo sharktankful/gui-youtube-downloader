@@ -85,4 +85,4 @@ If you want to contribute to this project, you are welcome! For this, there are 
 
 ## License
 
-This project is under the [MIT license](https://github.com/timotheeMM/youtube-downloader/blob/main/LICENSE).
+This project is under a [MIT license](https://github.com/timotheeMM/youtube-downloader/blob/main/LICENSE).
