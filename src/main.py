@@ -124,9 +124,9 @@ exit_status = False
 
 while exit_status == False:
     choice = input("Welcome to YouTube Downloader!\n"
-                   "Enter 1 for Command Line Interface\n"
-                   "Enter 2 for Graphical User Interface\n"
-                   "Enter 'exit' to Exit\n"
+                   "- Enter 1 for Command Line Interface\n"
+                   "- Enter 2 for Graphical User Interface\n"
+                   "- Enter 'exit' to Exit\n"
                    "Enter your input: ")
 
     if choice == "1":
