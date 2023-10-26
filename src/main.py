@@ -20,6 +20,7 @@ def cli():
         Returns:
             None
         """
+
         yt = YouTube(url)
         stream = yt.streams.get_highest_resolution()
         pbar = tqdm(total=stream.filesize, unit="B", unit_scale=True, colour="red")
@@ -36,6 +37,7 @@ def cli():
             Returns:
                 None
             """
+
             pbar.update(len(chunk))
 
         yt.register_on_progress_callback(on_progress)
@@ -51,12 +53,14 @@ def gui():
     
     def get_path():
         """Open a dialog to choose the download path and update the GUI label."""
+
         global PATH
         PATH = filedialog.askdirectory()
         filepath.config(text=PATH)
 
     def download_video():
         """Download the YouTube video when the 'Download' button is clicked."""
+
         progress['value'] = 0
         download_success.config(text="")
         window.update()
@@ -65,6 +69,7 @@ def gui():
 
         try:
             yt = YouTube(url)
+
         except:
             messagebox.showerror(title="ERROR!", message="Provided URL is either empty or invalid, please verify and try again.")
 
@@ -74,6 +79,7 @@ def gui():
 
         def on_progress(stream, chunk, bytes_remaining):
             """Callback function to update the download progress bar."""
+
             downloaded_bytes = fileSize - bytes_remaining
             progress['value'] = int((downloaded_bytes / fileSize) * 100)
             window.update()
@@ -125,7 +131,9 @@ while exit_status == False:
 
     if choice == "1":
         cli()  # Call the cli function
+
     elif choice == "2":
         gui()  # Call the gui function
+
     elif choice.lower() == "exit":
         exit_status = True
