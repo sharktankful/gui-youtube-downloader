@@ -48,7 +48,7 @@ cd src/
 python3 main.py
 ```
 
-9. Enter the URL of the youtube video you want to download. A "downloads" folder will be created in "src". Your video will be in it.
+9. Follow the on-screen instructions. When you will download a video, a "downloads" folder will be created in "src". Your video will be in it.
 
 ## You want to contribute ?
 
