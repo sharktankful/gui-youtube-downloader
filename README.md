@@ -16,21 +16,21 @@ Follow these steps to run the YouTube Downloader:
 
 4. Install Python if not done by going to the [official website](https://www.python.org/downloads/) and following the instructions for your operating system.
 
-5. Go to the project directory. For example: 
+5. Open a terminal or a command prompt and go to the project directory. For example: 
 
 ```sh
 cd Downloads/youtube-downloader-main/
 ```
 
-6. Open a terminal or a command prompt and activate the virtual environment where all dependencies are installed.
+6. Activate the virtual environment where all dependencies are installed.
 
-For Linux/MacOS:
+* For Linux/MacOS:
 
 ```sh
 source env/bin/activate
 ```
 
-For Windows:
+* For Windows:
 
 ```sh
 env\Scripts\activate
