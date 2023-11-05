@@ -16,25 +16,39 @@ Follow these steps to run the YouTube Downloader:
 
 4. Install Python if not done by going to the [official website](https://www.python.org/downloads/) and following the instructions for your operating system.
 
-5. Install pytube and tqdm with pip which normally installed with python.
+5. Go to the project directory. For example: 
 
 ```sh
-python3 -m pip install git+https://github.com/pytube/pytube git+https://github.com/tqdm/tqdm
+cd Downloads/youtube-downloader-main/
 ```
 
-6. Open a terminal or a command prompt and navigate with the cd command to the "scr" folder. For example:
+6. Open a terminal or a command prompt and activate the virtual environment where all dependencies are installed.
+
+For Linux/MacOS:
 
 ```sh
-cd Downloads/youtube-downloader-main/src/
+source env/bin/activate
 ```
 
-7. Run the main.py file by doing:
+For Windows:
+
+```sh
+env\Scripts\activate
+```
+
+7. Navigate with the cd command to the "scr" folder:
+
+```sh
+cd src/
+```
+
+8. Run the main.py file by doing:
 
 ```sh
 python3 main.py
 ```
 
-8. Enter the URL of the youtube video you want to download. A "downloads" folder will be created in "src". Your video will be in it.
+9. Enter the URL of the youtube video you want to download. A "downloads" folder will be created in "src". Your video will be in it.
 
 ## You want to contribute ?
 
