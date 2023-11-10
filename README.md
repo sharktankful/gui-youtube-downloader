@@ -27,13 +27,13 @@ cd Downloads/youtube-downloader-main/
 * For Linux/MacOS:
 
 ```sh
-source env/bin/activate
+source .env/bin/activate
 ```
 
 * For Windows:
 
 ```sh
-env\Scripts\activate
+.env\Scripts\activate
 ```
 
 7. Navigate with the cd command to the "scr" folder:
