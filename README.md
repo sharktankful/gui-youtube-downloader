@@ -1,5 +1,7 @@
 <h1 align="center">YOUTUBE DOWNLOADER</h1>
 
+![gui](https://github.com/timotheeMM/youtube-downloader/assets/143833750/61e9a05a-7a56-490f-af88-2b2e6e541601)
+
 ## What is this project ?
 
 This project is a YouTube downloader. This version is coded with Python and the pytube library.
