@@ -21,4 +21,5 @@ while True:
         exit()
 
     else:
-        print(f"'{choice}' is not part of the options. Try again...\n")
+        print(f"The choice '{choice}' is not among the available options. Please try again...\n")
+
