@@ -50,7 +50,7 @@ cd src/
 python3 main.py
 ```
 
-9. Follow the on-screen instructions. When you will download a video, a "downloads" folder will be created in "src". Your video will be in it.
+9. Follow the on-screen instructions. When you will download a video, you will find it in the "downloads" folder.
 
 ## You want to contribute ?
 
