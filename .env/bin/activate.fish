@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/prog/Documents/youtube-downloader/.env"
+set -gx VIRTUAL_ENV "/home/prog/Documents/gui-youtube-downloader/.env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
