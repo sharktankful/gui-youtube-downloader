@@ -1,6 +1,6 @@
-<h1 align="center">YOUTUBE DOWNLOADER</h1>
+<h1 align="center">YOUTUBE DOWNLOADER (GUI version)</h1>
 
-![gui](https://github.com/timotheeMM/youtube-downloader/assets/143833750/61e9a05a-7a56-490f-af88-2b2e6e541601)
+![gui](https://github.com/timotheeMM/gui-youtube-downloader/assets/143833750/61e9a05a-7a56-490f-af88-2b2e6e541601)
 
 ## What is this project ?
 
@@ -10,7 +10,7 @@ This project is a YouTube downloader. This version is coded with Python and the 
 
 Follow these steps to run the YouTube Downloader:
 
-1. Go to the [repository homepage](https://github.com/timotheeMM/youtube-downloader).
+1. Go to the [repository homepage](https://github.com/timotheeMM/gui-youtube-downloader).
 
 2. Click on the green "<> Code" button, go to the "Local" tab and download the ZIP.
 
@@ -21,7 +21,7 @@ Follow these steps to run the YouTube Downloader:
 5. Open a terminal or a command prompt and go to the project directory. For example: 
 
 ```sh
-cd Downloads/youtube-downloader-main/
+cd Downloads/gui-youtube-downloader-main/
 ```
 
 6. Activate the virtual environment where all dependencies are installed.
@@ -62,7 +62,7 @@ If you want to contribute to this project, you are welcome! For this, there are 
 
     ```sh
     # make sure that git is installed before doing this
-    git clone https://github.com/your-username/youtube-downloader.git
+    git clone https://github.com/your-username/gui-youtube-downloader.git
     ```
 
 3. Create a new branch that describes what you want to do by entering:
@@ -101,4 +101,4 @@ If you want to contribute to this project, you are welcome! For this, there are 
 
 ## License
 
-This project is under a [MIT license](https://github.com/timotheeMM/youtube-downloader/blob/main/LICENSE).
+This project is under a [MIT license](https://github.com/timotheeMM/gui-youtube-downloader/blob/main/LICENSE).
