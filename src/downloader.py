@@ -23,7 +23,11 @@ def gui():
 
         url = video_url.get()
 
-        yt = YouTube(url)
+        try:
+            yt = YouTube(url)
+
+        except:
+            exit("\nThe URL you provided is either empty or invalid.")
 
         progress['value'] = 0
         download_status.config(text="Downloading...")
