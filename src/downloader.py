@@ -57,7 +57,6 @@ def gui():
 
     window = ThemedTk(theme="breeze")
     window.title("YouTube Downloader")
-    window.minsize(939, 126)
 
     label = tk.Label(text="Enter the URL of the YouTube video:")
     label.grid(row=0, column=0, padx=15, pady=10)
