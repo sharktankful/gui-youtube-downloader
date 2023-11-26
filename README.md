@@ -1,6 +1,6 @@
 <h1 align="center">YOUTUBE DOWNLOADER (GUI version)</h1>
 
-![gui](https://github.com/timotheeMM/gui-youtube-downloader/assets/143833750/61e9a05a-7a56-490f-af88-2b2e6e541601)
+![image](https://github.com/timotheeMM/gui-youtube-downloader/assets/143833750/b7e820c1-5c70-443a-bcb6-cdf649ca5d29)
 
 ## What is this project ?
 
