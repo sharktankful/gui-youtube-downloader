@@ -1,4 +1,4 @@
-#!/home/prog/Documents/gui-youtube-downloader/.env/bin/python3
+#!/home/timothee/Documents/GitHub/gui-youtube-downloader/.env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
