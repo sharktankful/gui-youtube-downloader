@@ -1,0 +1,12 @@
+# Byte-compiled
+__pycache__/
+*.pyc
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Download folder
+downloads/
