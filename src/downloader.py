@@ -1,6 +1,7 @@
 from pytube import YouTube
+from pytube.exceptions import VideoUnavailable, RegexMatchError
+
 import tkinter as tk
-import pytube.exceptions
 from tkinter import ttk, filedialog, messagebox
 from ttkthemes import ThemedTk
 
@@ -55,10 +56,10 @@ def gui():
             stream.download(PATH)
             download_status_label.config(text="DOWNLOAD SUCCESS!", fg="green")
             
-        except pytube.exceptions.VideoUnavailable:
+        except VideoUnavailable:
             messagebox.showerror(title="ERROR!", message="The Provided Video is unavailable")
             
-        except pytube.exceptions.RegexMatchError:
+        except RegexMatchError:
             messagebox.showerror(title="ERROR!", message="Provided URL is either empty or invalid, please verify and try again.")
 
     window = ThemedTk(theme="breeze")
