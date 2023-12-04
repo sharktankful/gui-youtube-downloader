@@ -24,18 +24,10 @@ Follow these steps to run the YouTube Downloader:
 cd Downloads/gui-youtube-downloader-main/
 ```
 
-6. Activate the virtual environment where all dependencies are installed.
-
-* For Linux/MacOS:
+6. Install the necessary packages for the program with:
 
 ```sh
-source .env/bin/activate
-```
-
-* For Windows:
-
-```sh
-.env\Scripts\activate
+python3 -m pip install -r requirements.txt
 ```
 
 7. Navigate with the cd command to the "scr" folder:
