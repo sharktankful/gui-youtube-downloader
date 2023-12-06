@@ -9,6 +9,7 @@ import os
 
 PATH = os.path.join(os.getcwd(), "downloads")
 
+
 def gui():
     """
     Graphical User Interface for downloading YouTube videos.
@@ -20,7 +21,7 @@ def gui():
         """
         Open a dialog to choose the download path and update the GUI label.
         """
-        
+
         global PATH
         PATH = filedialog.askdirectory()
         filepath_label.config(text=PATH)
@@ -34,9 +35,10 @@ def gui():
 
         try:
             yt = YouTube(url)
+
             window.update()
             stream = yt.streams.get_highest_resolution()
-            fileSize = stream.filesize
+            file_size = stream.filesize
 
             def on_progress(stream, chunk, bytes_remaining):
                 """
@@ -47,20 +49,21 @@ def gui():
                 chunk (bytes): The chunk of data being downloaded.
                 bytes_remaining (int): The number of bytes remaining to download.
             """
-                downloaded_bytes = fileSize - bytes_remaining
-                download_progressbar['value'] = int((downloaded_bytes / fileSize) * 100)
+                downloaded_bytes = file_size - bytes_remaining
+                download_progressbar['value'] = int((downloaded_bytes / file_size) * 100)
                 window.update()
 
             yt.register_on_progress_callback(on_progress)
 
             stream.download(PATH)
             download_status_label.config(text="DOWNLOAD SUCCESS!", fg="green")
-            
+
         except VideoUnavailable:
             messagebox.showerror(title="ERROR!", message="The Provided Video is unavailable")
-            
+
         except RegexMatchError:
-            messagebox.showerror(title="ERROR!", message="Provided URL is either empty or invalid, please verify and try again.")
+            messagebox.showerror(title="ERROR!",
+                                 message="Provided URL is either empty or invalid, please verify and try again.")
 
     window = ThemedTk(theme="breeze")
     window.title("YouTube Downloader")
