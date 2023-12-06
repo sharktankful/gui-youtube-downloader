@@ -42,13 +42,14 @@ def gui():
 
             def on_progress(stream, chunk, bytes_remaining):
                 """
-            Callback function to update the download progress bar.
+                Callback function to update the download progress bar.
 
-            Args:
-                stream (pytube.Stream): The stream being downloaded.
-                chunk (bytes): The chunk of data being downloaded.
-                bytes_remaining (int): The number of bytes remaining to download.
-            """
+                Args:
+                    stream (pytube.Stream): The stream being downloaded.
+                    chunk (bytes): The chunk of data being downloaded.
+                    bytes_remaining (int): The number of bytes remaining to download.
+                """
+
                 downloaded_bytes = file_size - bytes_remaining
                 download_progressbar['value'] = int((downloaded_bytes / file_size) * 100)
                 window.update()
