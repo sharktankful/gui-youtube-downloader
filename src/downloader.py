@@ -1,11 +1,11 @@
 from pytube import YouTube
-import tkinter as tk
+from pytube.exceptions import VideoUnavailable, RegexMatchError
 
-from tkinter import ttk, filedialog
+import tkinter as tk
+from tkinter import ttk, filedialog, messagebox
 from ttkthemes import ThemedTk
 
 import os
-
 
 PATH = os.path.join(os.getcwd(), "downloads")
 
@@ -15,8 +15,6 @@ def gui():
     """
 
     print("\nGUI running...")
-
-    path = os.path.join(os.getcwd(), "downloads/")
 
     def get_path():
         """
@@ -36,19 +34,12 @@ def gui():
 
         try:
             yt = YouTube(url)
+            window.update()
+            stream = yt.streams.get_highest_resolution()
+            fileSize = stream.filesize
 
-        except:
-            exit("\nThe URL you provided is either empty or invalid.")
-
-        download_progressbar['value'] = 0
-        download_status_label.config(text="Downloading...")
-        window.update()
-
-        stream = yt.streams.get_highest_resolution()
-        file_size = stream.filesize
-
-        def on_progress(stream, chunk, bytes_remaining):
-            """
+            def on_progress(stream, chunk, bytes_remaining):
+                """
             Callback function to update the download progress bar.
 
             Args:
@@ -56,17 +47,20 @@ def gui():
                 chunk (bytes): The chunk of data being downloaded.
                 bytes_remaining (int): The number of bytes remaining to download.
             """
+                downloaded_bytes = fileSize - bytes_remaining
+                download_progressbar['value'] = int((downloaded_bytes / fileSize) * 100)
+                window.update()
 
-            downloaded_bytes = file_size - bytes_remaining
-            download_progressbar['value'] = int((downloaded_bytes / file_size) * 100)
-            window.update()
+            yt.register_on_progress_callback(on_progress)
 
-        yt.register_on_progress_callback(on_progress)
-
-        print(PATH)
-
-        stream.download(PATH)
-        download_status_label.config(text="DOWNLOAD SUCCESS!", fg="green")
+            stream.download(PATH)
+            download_status_label.config(text="DOWNLOAD SUCCESS!", fg="green")
+            
+        except VideoUnavailable:
+            messagebox.showerror(title="ERROR!", message="The Provided Video is unavailable")
+            
+        except RegexMatchError:
+            messagebox.showerror(title="ERROR!", message="Provided URL is either empty or invalid, please verify and try again.")
 
     window = ThemedTk(theme="breeze")
     window.title("YouTube Downloader")
