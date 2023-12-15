@@ -10,3 +10,6 @@ venv/
 
 # Download folder
 downloads/
+
+# Configuration
+.idea/
