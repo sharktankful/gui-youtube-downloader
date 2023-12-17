@@ -1,7 +1,7 @@
 import customtkinter
 
-customtkinter.set_appearance_mode("dark")
-customtkinter.set_default_color_theme("dark-blue")
+customtkinter.set_appearance_mode("system")
+customtkinter.set_default_color_theme("blue")
 
 
 class App(customtkinter.CTk):
@@ -14,34 +14,34 @@ class App(customtkinter.CTk):
         # line 1
 
         self.label1 = customtkinter.CTkLabel(self, text="Enter the URL of the YouTube video:")
-        self.label1.grid(row=0, column=0)
+        self.label1.grid(row=0, column=0, padx=15, pady=10)
 
-        self.entry1 = customtkinter.CTkEntry(self)
-        self.entry1.grid(row=0, column=1)
+        self.entry1 = customtkinter.CTkEntry(self, width=350)
+        self.entry1.grid(row=0, column=1, padx=15, pady=10)
 
-        self.button1 = customtkinter.CTkButton(self, text="Download")
-        self.button1.grid(row=0, column=2)
+        self.button1 = customtkinter.CTkButton(self, text="Download", width=100)
+        self.button1.grid(row=0, column=2, padx=15, pady=10)
 
         # line 2
 
         self.label2 = customtkinter.CTkLabel(self, text="Downloading Path:")
-        self.label2.grid(row=1, column=0)
+        self.label2.grid(row=1, column=0, padx=15, pady=10)
 
         self.label3 = customtkinter.CTkLabel(self, text="PATH")
-        self.label3.grid(row=1, column=1)
+        self.label3.grid(row=1, column=1, padx=15, pady=10)
 
-        self.button2 = customtkinter.CTkButton(self, text="Change path")
-        self.button2.grid(row=1, column=2)
+        self.button2 = customtkinter.CTkButton(self, text="Change path", width=100)
+        self.button2.grid(row=1, column=2, padx=15, pady=10)
 
         # line 3
 
-        self.progress_bar = customtkinter.CTkProgressBar(self)
-        self.progress_bar.grid(row=2, column=0, columnspan=3)
+        self.progress_bar = customtkinter.CTkProgressBar(self, mode="determinate")
+        self.progress_bar.grid(row=2, column=0, padx=15, pady=10, columnspan=3, sticky="ew")
 
         # line 4
 
         self.label4 = customtkinter.CTkLabel(self, text="Status")
-        self.label4.grid(row=3, column=2)
+        self.label4.grid(row=3, column=2, padx=15, pady=10)
 
 
 if __name__ == "__main__":
