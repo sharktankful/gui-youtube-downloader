@@ -33,6 +33,11 @@ class App(customtkinter.CTk):
         self.button2 = customtkinter.CTkButton(self, text="Change path")
         self.button2.grid(row=1, column=2)
 
+        # line 3
+
+        self.progress_bar = customtkinter.CTkProgressBar(self)
+        self.progress_bar.grid(row=2, column=0, columnspan=3)
+
 
 if __name__ == "__main__":
     app = App()
