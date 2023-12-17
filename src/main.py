@@ -38,6 +38,11 @@ class App(customtkinter.CTk):
         self.progress_bar = customtkinter.CTkProgressBar(self)
         self.progress_bar.grid(row=2, column=0, columnspan=3)
 
+        # line 4
+
+        self.label4 = customtkinter.CTkLabel(self, text="Status")
+        self.label4.grid(row=3, column=2)
+
 
 if __name__ == "__main__":
     app = App()
