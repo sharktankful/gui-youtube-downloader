@@ -21,6 +21,7 @@ class App(customtkinter.CTk):
 
         self.button1 = customtkinter.CTkButton(self, text="Download", width=100)
         self.button1.grid(row=0, column=2, padx=15, pady=10)
+        self.button1.configure(command=self.download_video)
 
         # line 2
 
@@ -32,6 +33,7 @@ class App(customtkinter.CTk):
 
         self.button2 = customtkinter.CTkButton(self, text="Change path", width=100)
         self.button2.grid(row=1, column=2, padx=15, pady=10)
+        self.button2.configure(command=self.change_path)
 
         # line 3
 
@@ -42,6 +44,12 @@ class App(customtkinter.CTk):
 
         self.label4 = customtkinter.CTkLabel(self, text="Status")
         self.label4.grid(row=3, column=2, padx=15, pady=10)
+
+    def download_video(self):
+        pass
+
+    def change_path(self):
+        pass
 
 
 if __name__ == "__main__":
