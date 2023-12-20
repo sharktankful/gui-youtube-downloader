@@ -13,7 +13,15 @@ customtkinter.set_default_color_theme("blue")
 
 
 class App(customtkinter.CTk):
+    """
+    A YouTube video downloader application using customtkinter and Pytube.
+    """
+
     def __init__(self):
+        """
+        Initialize the application window and set up the UI components.
+        """
+
         super().__init__()
 
         self.download_path = os.path.join(os.getcwd(), "downloads")
@@ -56,7 +64,11 @@ class App(customtkinter.CTk):
         self.label4 = customtkinter.CTkLabel(self, text="Status")
         self.label4.grid(row=3, column=2, padx=15, pady=10)
 
-    def download_video(self):
+    def _download_video(self):
+        """
+        Download the YouTube video specified by the provided URL.
+        """
+
         url = self.entry1.get()
 
         try:
@@ -95,7 +107,11 @@ class App(customtkinter.CTk):
                 message="The provided video is unavailable."
             )
 
-    def change_path(self):
+    def _change_path(self):
+        """
+        Change the download path by opening a directory selection dialog.
+        """
+
         new_path = filedialog.askdirectory()
         self.download_path = new_path
         self.label3.configure(text=self.download_path)
