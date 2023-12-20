@@ -81,6 +81,15 @@ class App(customtkinter.CTk):
             self.label4.configure(text="Downloading...")
 
             def on_progress(stream, chunk, bytes_remaining):
+                """
+                Callback function to update the download progress bar.
+
+                Args:
+                    stream (pytube.Stream): The stream being downloaded.
+                    chunk (bytes): The chunk of data being downloaded.
+                    bytes_remaining (int): The number of bytes remaining to download.
+                """
+
                 downloaded_bytes = stream.filesize - bytes_remaining
                 self.progress_bar.set(downloaded_bytes / stream.filesize)
                 self.progress_bar.update()
