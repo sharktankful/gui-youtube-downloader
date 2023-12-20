@@ -1,3 +1,4 @@
+import os
 import time
 
 from pytube import YouTube
@@ -14,6 +15,8 @@ customtkinter.set_default_color_theme("blue")
 class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
+
+        self.download_path = os.path.join(os.getcwd(), "downloads")
 
         self.grid_columnconfigure((0, 1, 2), weight=0)
         self.grid_rowconfigure((0, 1, 2, 3), weight=1)
@@ -35,7 +38,7 @@ class App(customtkinter.CTk):
         self.label2 = customtkinter.CTkLabel(self, text="Downloading Path:")
         self.label2.grid(row=1, column=0, padx=15, pady=10)
 
-        self.label3 = customtkinter.CTkLabel(self, text="PATH")
+        self.label3 = customtkinter.CTkLabel(self, text=self.download_path)
         self.label3.grid(row=1, column=1, padx=15, pady=10)
 
         self.button2 = customtkinter.CTkButton(self, text="Change path", width=150)
@@ -70,7 +73,7 @@ class App(customtkinter.CTk):
 
             video.register_on_progress_callback(on_progress)
 
-            stream.download("downloads/")
+            stream.download(self.download_path)
 
             self.label4.configure(text="DOWNLOAD SUCCESS!")
             self.label4.update()
@@ -93,7 +96,10 @@ class App(customtkinter.CTk):
             )
 
     def change_path(self):
-        pass
+        new_path = filedialog.askdirectory()
+        self.download_path = new_path
+        self.label3.configure(text=self.download_path)
+        self.label3.update()
 
 
 if __name__ == "__main__":
