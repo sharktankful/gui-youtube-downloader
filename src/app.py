@@ -33,27 +33,27 @@ class App(customtkinter.CTk):
 
         # line 1
 
-        self.label1 = customtkinter.CTkLabel(self, text="Enter the URL of the YouTube video:")
-        self.label1.grid(row=0, column=0, padx=15, pady=10)
+        self.url_status_label = customtkinter.CTkLabel(self, text="Enter the URL of the YouTube video:")
+        self.url_status_label.grid(row=0, column=0, padx=15, pady=10)
 
-        self.entry1 = customtkinter.CTkEntry(self, width=500)
-        self.entry1.grid(row=0, column=1, padx=15, pady=10)
+        self.url_entry = customtkinter.CTkEntry(self, width=500)
+        self.url_entry.grid(row=0, column=1, padx=15, pady=10)
 
-        self.button1 = customtkinter.CTkButton(self, text="Download", width=150)
-        self.button1.grid(row=0, column=2, padx=15, pady=10)
-        self.button1.configure(command=self._download_video)
+        self.download_button = customtkinter.CTkButton(self, text="Download", width=150)
+        self.download_button.grid(row=0, column=2, padx=15, pady=10)
+        self.download_button.configure(command=self._download_video)
 
         # line 2
 
-        self.label2 = customtkinter.CTkLabel(self, text="Downloading Path:")
-        self.label2.grid(row=1, column=0, padx=15, pady=10)
+        self.path_status_label1 = customtkinter.CTkLabel(self, text="Downloading Path:")
+        self.path_status_label1.grid(row=1, column=0, padx=15, pady=10)
 
-        self.label3 = customtkinter.CTkLabel(self, text=self.download_path)
-        self.label3.grid(row=1, column=1, padx=15, pady=10)
+        self.path_status_label2 = customtkinter.CTkLabel(self, text=self.download_path)
+        self.path_status_label2.grid(row=1, column=1, padx=15, pady=10)
 
-        self.button2 = customtkinter.CTkButton(self, text="Change path", width=150)
-        self.button2.grid(row=1, column=2, padx=15, pady=10)
-        self.button2.configure(command=self._change_path)
+        self.change_path_button = customtkinter.CTkButton(self, text="Change path", width=150)
+        self.change_path_button.grid(row=1, column=2, padx=15, pady=10)
+        self.change_path_button.configure(command=self._change_path)
 
         # line 3
 
@@ -63,22 +63,22 @@ class App(customtkinter.CTk):
 
         # line 4
 
-        self.label4 = customtkinter.CTkLabel(self, text="Status")
-        self.label4.grid(row=3, column=2, padx=15, pady=10)
+        self.status_label4 = customtkinter.CTkLabel(self, text="Status")
+        self.status_label4.grid(row=3, column=2, padx=15, pady=10)
 
     def _download_video(self):
         """
         Download the YouTube video specified by the provided URL.
         """
 
-        url = self.entry1.get()
+        url = self.url_entry.get()
 
         try:
             video = YouTube(url)
 
             stream = video.streams.get_highest_resolution()
 
-            self.label4.configure(text="Downloading...")
+            self.status_label4.configure(text="Downloading...")
 
             def on_progress(stream, chunk, bytes_remaining):
                 """
@@ -98,13 +98,13 @@ class App(customtkinter.CTk):
 
             stream.download(self.download_path)
 
-            self.label4.configure(text="DOWNLOAD SUCCESS!")
-            self.label4.update()
+            self.status_label4.configure(text="DOWNLOAD SUCCESS!")
+            self.status_label4.update()
 
             time.sleep(3)
 
             self.progress_bar.set(0)
-            self.label4.configure(text="Status")
+            self.status_label4.configure(text="Status")
 
         except RegexMatchError:
             messagebox.showerror(
@@ -125,5 +125,5 @@ class App(customtkinter.CTk):
 
         new_path = filedialog.askdirectory()
         self.download_path = new_path
-        self.label3.configure(text=self.download_path)
-        self.label3.update()
+        self.path_status_label2.configure(text=self.download_path)
+        self.path_status_label2.update()
