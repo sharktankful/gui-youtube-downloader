@@ -26,6 +26,8 @@ class App(customtkinter.CTk):
 
         self.download_path = os.path.join(os.getcwd(), "downloads")
 
+        self.title("YouTube Downloader")
+
         self.grid_columnconfigure((0, 1, 2), weight=0)
         self.grid_rowconfigure((0, 1, 2, 3), weight=1)
 
@@ -97,13 +99,13 @@ class App(customtkinter.CTk):
 
         except RegexMatchError:
             messagebox.showerror(
-                title="ERROR!",
+                title="ERROR",
                 message="Provided URL is either empty or invalid, please verify and try again."
             )
 
         except VideoUnavailable:
             messagebox.showerror(
-                title="ERROR!",
+                title="ERROR",
                 message="The provided video is unavailable."
             )
 
