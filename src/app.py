@@ -9,7 +9,7 @@ from tkinter import filedialog, messagebox
 import customtkinter
 
 customtkinter.set_appearance_mode("system")
-customtkinter.set_default_color_theme("blue")
+customtkinter.set_default_color_theme("green")
 
 
 class App(customtkinter.CTk):
@@ -34,7 +34,7 @@ class App(customtkinter.CTk):
         self.label1 = customtkinter.CTkLabel(self, text="Enter the URL of the YouTube video:")
         self.label1.grid(row=0, column=0, padx=15, pady=10)
 
-        self.entry1 = customtkinter.CTkEntry(self, width=350)
+        self.entry1 = customtkinter.CTkEntry(self, width=500)
         self.entry1.grid(row=0, column=1, padx=15, pady=10)
 
         self.button1 = customtkinter.CTkButton(self, text="Download", width=150)
