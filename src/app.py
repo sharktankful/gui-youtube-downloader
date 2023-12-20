@@ -123,7 +123,10 @@ class App(customtkinter.CTk):
         Change the download path by opening a directory selection dialog.
         """
 
-        new_path = filedialog.askdirectory()
-        self.download_path = new_path
+        self.download_path = filedialog.askdirectory()
+
+        if self.download_path == "":
+            self.download_path = os.path.join(os.getcwd(), "downloads")
+
         self.path_status_label2.configure(text=self.download_path)
         self.path_status_label2.update()
