@@ -4,7 +4,7 @@
 
 ## What is this project ?
 
-This project is a YouTube downloader. This version is coded with Python and its pytube library. The graphical user interface uses customtkinter.
+This project is a YouTube downloader. It is coded with Python and its [pytube](https://github.com/pytube/pytube) library. The graphical user interface uses [customtkinter](https://github.com/TomSchimansky/CustomTkinter).
 
 ## Run the project
 
