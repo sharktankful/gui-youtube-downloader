@@ -45,11 +45,11 @@ class App(customtkinter.CTk):
 
         # line 2
 
-        self.path_status_label1 = customtkinter.CTkLabel(self, text="Downloading Path:")
-        self.path_status_label1.grid(row=1, column=0, padx=15, pady=10)
+        self.path_label1 = customtkinter.CTkLabel(self, text="Downloading Path:")
+        self.path_label1.grid(row=1, column=0, padx=15, pady=10)
 
-        self.path_status_label2 = customtkinter.CTkLabel(self, text=self.download_path)
-        self.path_status_label2.grid(row=1, column=1, padx=15, pady=10)
+        self.path_label2 = customtkinter.CTkLabel(self, text=self.download_path)
+        self.path_label2.grid(row=1, column=1, padx=15, pady=10)
 
         self.change_path_button = customtkinter.CTkButton(self, text="Change path", width=150)
         self.change_path_button.grid(row=1, column=2, padx=15, pady=10)
@@ -63,8 +63,8 @@ class App(customtkinter.CTk):
 
         # line 4
 
-        self.status_label4 = customtkinter.CTkLabel(self, text="Status")
-        self.status_label4.grid(row=3, column=2, padx=15, pady=10)
+        self.status_label = customtkinter.CTkLabel(self, text="Status")
+        self.status_label.grid(row=3, column=2, padx=15, pady=10)
 
     def _download_video(self):
         """
@@ -78,7 +78,7 @@ class App(customtkinter.CTk):
 
             stream = video.streams.get_highest_resolution()
 
-            self.status_label4.configure(text="Downloading...")
+            self.status_label.configure(text="Downloading...")
 
             def on_progress(stream, chunk, bytes_remaining):
                 """
@@ -98,13 +98,13 @@ class App(customtkinter.CTk):
 
             stream.download(self.download_path)
 
-            self.status_label4.configure(text="DOWNLOAD SUCCESS!")
-            self.status_label4.update()
+            self.status_label.configure(text="DOWNLOAD SUCCESS!")
+            self.status_label.update()
 
             time.sleep(3)
 
             self.progress_bar.set(0)
-            self.status_label4.configure(text="Status")
+            self.status_label.configure(text="Status")
 
         except RegexMatchError:
             messagebox.showerror(
@@ -128,5 +128,5 @@ class App(customtkinter.CTk):
         if self.download_path == "":
             self.download_path = os.path.join(os.getcwd(), "downloads")
 
-        self.path_status_label2.configure(text=self.download_path)
-        self.path_status_label2.update()
+        self.path_label2.configure(text=self.download_path)
+        self.path_label2.update()
