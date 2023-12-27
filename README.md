@@ -42,7 +42,7 @@ cd src/
 python3 main.py
 ```
 
-9. Follow the on-screen instructions. When you will download a video, you will find it in the "downloads" folder.
+9. Follow the on-screen instructions. When you will download a video, you will find it in the "Downloads" folder.
 
 ## You want to contribute ?
 
