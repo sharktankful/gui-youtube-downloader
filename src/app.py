@@ -28,9 +28,6 @@ class App(customtkinter.CTk):
 
         self.title("YouTube Downloader")
 
-        self.grid_columnconfigure((0, 1, 2), weight=0)
-        self.grid_rowconfigure((0, 1, 2, 3), weight=1)
-
         # line 1
 
         self.url_status_label = customtkinter.CTkLabel(self, text="Enter the URL of the YouTube video:")
@@ -126,7 +123,7 @@ class App(customtkinter.CTk):
         self.download_path = filedialog.askdirectory()
 
         if self.download_path == "":
-            self.download_path = os.path.join(os.getcwd(), "downloads")
+            self.download_path = os.path.join(os.getcwd(), "Downloads")
 
         self.path_label2.configure(text=self.download_path)
         self.path_label2.update()
