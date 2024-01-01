@@ -91,6 +91,8 @@ If you want to contribute to this project, you are welcome! For this, there are 
 
 9. Validate and then wait for validation... :blush:
 
+:bulb: You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star!
+
 ## License
 
 This project is under a [MIT license](https://github.com/timotheeMM/gui-youtube-downloader/blob/main/LICENSE).
