@@ -24,7 +24,7 @@ class App(customtkinter.CTk):
 
         super().__init__()
 
-        self.download_path = os.path.join(os.getcwd(), "downloads")
+        self.download_path = os.path.join(os.path.expanduser("~"), "Downloads")
 
         self.title("YouTube Downloader")
 
@@ -123,7 +123,7 @@ class App(customtkinter.CTk):
         self.download_path = filedialog.askdirectory()
 
         if self.download_path == "":
-            self.download_path = os.path.join(os.getcwd(), "Downloads")
+            self.download_path = os.path.join(os.path.expanduser("~"), "Downloads")
 
         self.path_label2.configure(text=self.download_path)
         self.path_label2.update()
