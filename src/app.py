@@ -84,18 +84,8 @@ class App(customtkinter.CTk):
         try:
             video = YouTube(url)
 
-            # line 5 - YOUTUBE TITLE
-            self.title_label = customtkinter.CTkLabel(
-                self, text=f"Title: {video.title}")
-            self.title_label.grid(row=4, column=0, padx=15, pady=10)
-
-            # line 6 - THUMBNAIL IMAGE
-            urllib.request.urlretrieve(video.thumbnail_url, "thumbnail")
-
-            self.image = customtkinter.CTkImage(Image.open("thumbnail"), size=(426, 240))
-            self.thumbnail = customtkinter.CTkLabel(self, text="", image=self.image)
-            self.thumbnail.grid(row=5, column=0, padx=15, pady=10)
-
+            # GRABS VIDEO TITLE AND THUMBNAIL FOR GUI DISPLAY
+            self.video_info(video)
 
             stream = video.streams.get_highest_resolution()
 
@@ -138,6 +128,50 @@ class App(customtkinter.CTk):
                 title="ERROR",
                 message="The provided video is unavailable."
             )
+    
+    def video_info(self, video):
+        # line 5 - YOUTUBE TITLE
+        self.title_label = customtkinter.CTkLabel(
+            self, text=f"Title: {video.title}")
+
+        # line 6 - THUMBNAIL IMAGE
+        urllib.request.urlretrieve(video.thumbnail_url, "thumbnail")
+
+        self.image = customtkinter.CTkImage(Image.open("thumbnail"), size=(256, 144))
+        self.thumbnail = customtkinter.CTkLabel(self, text="", image=self.image)
+
+        # Function Adds Title/Thumbnail to GUI and moves elements
+        self.grid_adjustment()
+
+    
+    def grid_adjustment(self):
+        # line 2 (Title)
+        
+        self.title_label.grid(row=1, column=1, padx=15, pady=10)
+
+        # line 3 (Thumbnail Picture)
+
+        self.thumbnail.grid(row=2, column=1, padx=15, pady=10)
+
+        # line 4 (Download path)
+
+        self.path_label1.grid(row=3, column=0, padx=15, pady=10)
+
+        self.path_label2.grid(row=3, column=1, padx=15, pady=10)
+
+        self.change_path_button.grid(row=3, column=2, padx=15, pady=10)
+
+        # line 5 (Status Bar)
+
+        self.progress_bar.grid(row=4, column=0, padx=15,
+                               pady=10, columnspan=3, sticky="ew")
+
+        # line 6 (Download Status)
+
+        self.status_label.grid(row=5, column=2, padx=15, pady=10)
+
+
+
 
     def _change_path(self):
         """
